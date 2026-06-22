@@ -339,7 +339,7 @@ console.log(firstChar + lastChar);
 console.log("*".repeat(30));
 //🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀
 /*
-#👽 Level 1 — Variables & Math
+#👽🦜 Level 1 — Variables & Math
 
 ## Challenge 1: Age Calculator
 
@@ -354,7 +354,7 @@ Calculate the age and print:
 You are 20 years old
  */
 let birthYear = 2003, currentYear = 2026;
-console.log(birthYear - currentYear);
+console.log(-(birthYear - currentYear));//unary
 //🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀
 /*
 ## Challenge 2: Price With Tax
@@ -397,3 +397,249 @@ The remainder is 1
 let number = 51;
 console.log(number % 2);
 //🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀
+let hi = "jello word";
+hi[0] = "h";
+let firstLetter = hi[0];
+console.log(firstLetter);
+console.log("*".repeat(30));
+//(⌐■_■) SCOPES & BOOLEAN VAL. & İF STATEMENT & EQUALİTY OPERATOR 
+/*
+Level 4 — if Statements & Booleans
+1️⃣Challenge 1: Age Checker
+إذا العمر 18 أو أكثر:
+You can vote.
+غير ذلك:
+You cannot vote yet.
+*/
+let agee = 10;
+if (agee >= 18) {
+    console.log("You can vote.");
+} else {
+    console.log("You cannot vote yet.");
+}
+console.log("*".repeat(30));
+/*2️⃣Challenge 2: Even or Odd
+اطبع إذا الرقم زوجي أو فردي.
+*/
+let numberİf = 3;
+if (numberİf % 2) {
+    console.log("the num is Odd");
+} else {
+    console.log("the num. is Even.");
+}
+console.log("*".repeat(30));
+/*.3️⃣Challenge 3: Free Shipping
+إذا كان المبلغ أكبر أو يساوي 100:
+You qualify for free shipping.
+    وإلا:
+Add more items.
+*/
+let Shipping = window.prompt("Enter ur total Shipping!", 2500);
+if (Shipping >= 100) {
+    console.log("You qualify for free shipping.");
+} else {
+    console.log("Add more items.");
+}
+/*3️⃣ التحدي الثالث: Free Shipping
+التقييم: 6/10
+الملاحظات: 1.  دالة window.prompt() تعيد دائماً القيمة كـ نص (String) وليس كـ رقم 
+(Number). مقارنة النصوص مع الأرقام قد تسبب مشاكل أحياناً. الأفضل دائماً تحويل المدخلات إلى رقم باستخدام Number() أو parseInt().
+2.  تسمية المتغير Shipping غير دقيقة، فالمدخل هنا هو "إجمالي المبلغ" أو "السعر"، فالأفضل تسميته totalPrice أو amount. */
+/*
+# Level 5 — Equality Operators
+4️⃣Challenge 4: Password Check
+إذا كانت كلمة المرور صحيحة:
+Access granted
+غير ذلك:
+Access denied
+*/
+let pass = window.prompt("Enter ur password!", "jack");
+if (pass === "jack") {
+    console.log("Access granted");
+} else {
+    console.log("Access denied");
+}
+/*
+5️⃣Challenge 5: Strict Equality
+جرّب:
+5 === "5"
+5 == "5"
+true === 1
+واكتب النتيجة وفسرها. 
+*/
+if (5 === "5") {
+    console.log("it returns false. cuse the type not the same first one number, other one is a string");
+} else if (5 == "5") {
+    console.log("is true cuse here we dont have strict equalty and that mean we dont comparing a type.");
+} else {
+    console.log("true === 1 as we're comparing type+value we have boolean on the other hand we have num and all this equals false");
+}
+
+/*
+6️⃣Challenge 6: Favorite Color
+
+إذا كان اللون المفضل:
+
+blue
+
+اطبع:
+
+Great choice! */
+let favColor = "yellow";
+if (favColor === "blue") {
+    console.log("Great choice!");
+} else {
+    console.log("retry");
+}
+/*
+7️⃣Challenge 7: Greeting Function
+greet(name)
+تطبع:
+Hello, Hamed!*/
+
+function Greeting(name) {
+    return "hello" + " " + name;
+}
+console.log(Greeting("Khaled"));
+/*
+8️⃣Challenge 8: Sum Function
+add(a, b)
+ترجع المجموع.
+ */
+function sum(a, b) {
+    return a + b;
+}
+console.log(sum(10, 20));
+
+/*
+9️⃣Challenge 9: Larger Number
+findLarger(a, b)
+ترجع الرقم الأكبر.
+*/
+function findLarger(a, b) {
+    if (a > b) {
+        return a;
+    } else {
+        return b;
+    }
+
+}
+console.log(findLarger(10, 20));
+/*
+🔟Challenge 10: Even Checker Function
+isEven(number)
+ترجع:
+true
+أو:
+false 
+const isEven = number => number % 2 ? console.log("yes this is Even Number.") : console.log("false");
+
+console.log(isEven(36)); 
+
+
+في السطر الخاص بك: number % 2 ? ... : ...
+إذا كان الرقم زوجياً (مثل 36)، فإن 36 % 2 تعطي 0.
+ وفي JavaScript،
+  الرقم 0 يُعامل كـ False.
+   لذلك سينتقل الكود مباشرة إلى الجزء الثاني
+ بعد النقطتين ويفذ console.log("false"). 
+أي أن كودك الحالي يقول عن الرقم الزوجي أنه false!
+
+
+
+هنا المفاجأة: في JavaScript، أي نص يحتوي على حروف أو أرقام (حتى لو كان "0") يعتبر Truthy (صحيح) في الشروط. النص الوحيد الذي يعتبر False هو النص الفارغ "".
+
+بناءً على ذلك، الشرط تحقق دائماً واعتبره True، فطبع لك "yes this is Even Number.".
+
+ولكن ماذا لو جربت رقماً فردياً مثل 37؟
+
+37 % 2 تعطي 1.
+
+تتحول إلى النص "1".
+
+النص "1" يعتبر أيضاً Truthy (صحيح)!
+
+النتيجة: الكود سيطبع "yes this is Even Number." حتى مع الأرقام الفردية! (جرب بنفسك وسترى).
+const isEven = number => (number % 2).toString() ? " yes this is Even Number." : "false";
+console.log(isEven(36));
+*/
+const isEven = number => number % 2 === 0 ? true : false;
+console.log(isEven(36));
+
+// العمليات الشرطية مثل === ترجع تلقائياً true أو false،
+// فلا حاجة لكتابة if أو ? : على الإطلاق!
+const isEven2 = number => number % 2 === 0;
+
+console.log(isEven2(7));  // سيطبع: false
+/*
+
+Mini Project 1: Grade Checker
+
+Function:
+
+checkGrade(score)
+90+ → A
+80+ → B
+70+ → C
+60+ → D
+أقل → F
+*/
+
+function checkGrade(score) {
+    switch (true) {
+        case score >= 90:
+            return "A";
+            break;
+        case score >= 80:
+            return "B";
+            break;
+        case score >= 70:
+            return "C";
+            break;
+        case score >= 60:
+            return "D";
+            break;
+        case score < 60:
+            return "F";
+    }
+}
+console.log(checkGrade(59));
+/*
+Mini Project 2: Simple Calculator
+اعمل Functions:
+add()
+subtract()
+multiply()
+divide()
+*/
+function calculator(a, b) {
+    function sum(a, b) {
+        return a + b;
+    }
+    function subtract(a, b) {
+        return a < b ? b - a : a - b;//في الآلات الحاسبة العادية، لو طلب المستخدم 10 - 20 يجب أن تظهر له -10.
+    }
+    function multiply(a, b) {
+        return a * b;
+    }
+    function divide(a, b) {
+        //دالة القسمة (divide): نسيت إضافة حماية "القسمة على صفر" التي تحدثنا عنها في المنطق سابقاً.
+        return b === 0 ? "cannot divide by zero!" : a / b;
+
+    }
+    console.log(sum(10, 20));
+    console.log(subtract(10, 20));
+    console.log(multiply(10, 20));
+    console.log(divide(10, 20));
+}
+calculator(10, 20);
+/*
+Mini Project 3: Movie Ticket
+canWatchMovie(age)
+إذا العمر 18 أو أكثر → مسموح.
+*/
+function canWatchMovie(age) {
+    return age >= 18 ? "ok" : "noooo";
+}
+console.log(canWatchMovie(30));
+console.log(canWatchMovie(10));
